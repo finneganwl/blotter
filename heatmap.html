@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Heatmap</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        // Create the map.
+        var map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 15,
+          center: {lat: 42.056204, lng: -87.677112},
+          mapTypeId: 'terrain'
+        });
+
+        var heatMapData = [
+{location: new google.maps.LatLng(42.0510416, -87.6812257), weight: 22},
+{location: new google.maps.LatLng(42.0616005, -87.6750648), weight: 16},
+{location: new google.maps.LatLng(42.0596748, -87.6769913), weight: 8},
+{location: new google.maps.LatLng(42.0510276, -87.6755712), weight: 43},
+{location: new google.maps.LatLng(42.0593218, -87.6766698), weight: 27},
+{location: new google.maps.LatLng(42.0504851, -87.67801150000001), weight: 136},
+{location: new google.maps.LatLng(42.0520786, -87.6784806), weight: 17},
+{location: new google.maps.LatLng(42.0609938, -87.6749603), weight: 49},
+{location: new google.maps.LatLng(42.05141589999999, -87.6808972), weight: 87},
+{location: new google.maps.LatLng(42.05171840000001, -87.67946549999999), weight: 7},
+{location: new google.maps.LatLng(42.05958090000001, -87.6755259), weight: 107},
+{location: new google.maps.LatLng(42.0513822, -87.67968739999999), weight: 18},
+{location: new google.maps.LatLng(42.0510931, -87.6785345), weight: 39},
+{location: new google.maps.LatLng(42.0497772, -87.67566), weight: 108},
+{location: new google.maps.LatLng(42.0510483, -87.67945069999999), weight: 6},
+{location: new google.maps.LatLng(42.0509466, -87.6779911), weight: 48},
+{location: new google.maps.LatLng(42.0598528, -87.6769894), weight: 82},
+{location: new google.maps.LatLng(42.0513973, -87.6792323), weight: 3},
+{location: new google.maps.LatLng(42.0529359, -87.6793296), weight: 229},
+{location: new google.maps.LatLng(42.0603915, -87.67509849999999), weight: 51},
+{location: new google.maps.LatLng(42.06120600000001, -87.677629), weight: 166},
+{location: new google.maps.LatLng(42.0587265, -87.6754859), weight: 121},
+{location: new google.maps.LatLng(42.06005589999999, -87.6766135), weight: 15},
+{location: new google.maps.LatLng(42.0604942, -87.67570359999999), weight: 45},
+{location: new google.maps.LatLng(42.0507646, -87.67508029999999), weight: 54},
+{location: new google.maps.LatLng(42.0518278, -87.6798982), weight: 36},
+{location: new google.maps.LatLng(42.049351, -87.6748818), weight: 46},
+
+        ]
+
+        var heatmap = new google.maps.visualization.HeatmapLayer({
+          data: heatMapData,
+          radius: 60
+        });
+        heatmap.setMap(map);
+      }
+    </script>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=
+AIzaSyD7Cp4YBv1bzdLj2Y7X7HxdqYaftJ-Z4Og
+&libraries=visualization&callback=initMap">
+    </script>
+  </body>
+</html>
